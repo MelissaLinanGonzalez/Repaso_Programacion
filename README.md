@@ -1,6 +1,6 @@
 # 📚 Repositorio de Repaso de Programación en Java
 
-¡Bienvenido/a! Este repositorio contiene una colección organizada de contenidos prácticos y teóricos para repasar y reforzar tus conocimientos en **programación con Java**. Ideal para estudiantes, autodidactas o desarrolladores que deseen recordar y practicar temas clave del lenguaje Java, sus frameworks, y herramientas asociadas.
+¡Bienvenido/a! Este repositorio contiene una colección organizada de contenidos prácticos y teóricos para repasar y reforzar tus conocimientos en **programación con Java**. Ideal para practicar temas clave del lenguaje Java, sus frameworks, y herramientas asociadas.
 
 ---
 
