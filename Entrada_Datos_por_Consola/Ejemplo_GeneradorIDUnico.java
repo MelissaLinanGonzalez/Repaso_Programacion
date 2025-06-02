@@ -23,23 +23,29 @@ public class Ejemplo_GeneradorIDUnico {
         Scanner entrada = new Scanner(System.in);
         System.out.println("*** Sistema Generador de ID Único ***");
 
+        // Introducción del nombre
         System.out.print("Introduce tu nombre: ");
         String nombre = entrada.nextLine();
 
+        // Introducción del apellido
         System.out.print("Introduce tu apellido: ");
         String apellido = entrada.nextLine();
 
+        // Introducción del año de nacimiento, en String ya que es más fácil de manejar y obtener los 2 últimos dígitos
         System.out.print("Introduce tu año de nacimiento (YYYY): ");
         String anio = entrada.nextLine();
 
+        // Seleccionamos los valores deseados, del nombre y apellido, las dos primeras y del año las dos últimas
         String nom = nombre.substring(0,2).toUpperCase();
         String ape = apellido.substring(0,2).toUpperCase();
         String an = anio.substring(anio.length() - 2);
 
+        // Se genera el número aleatorio entre 1 y 1999 y se formatea a 4 dígitos, añadiendo 0 a la izquierda si no tiene 4 dígitos
         Random random = new Random();
         int num = random.nextInt(1999) + 1;
         String numeroFormateado = String.format("%04d", num);
 
+        // Se concatenan los valores deseados del orden pedido
         String ID = nom + ape + an + numeroFormateado;
 
         System.out.printf("""
