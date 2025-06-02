@@ -11,5 +11,28 @@ public class FormateoCadenas {
 
         // Metodo printf
         System.out.printf("Nombre: %s, Edad: %d, Salario: %.2f%n", nombre, edad, salario);
+
+        int numeroEmpleado = 12; // Se va a mostrar con 4 digítos si el valor introducido no cumple esta condición, si no lo cumpliese se añadirian los 0 necesarios a la izquierda
+        // Formateo con text block
+        mensaje = """
+                %nDetalle Persona:\s
+                -------------------
+                \tNombre: %s
+                \tNo. Empleado: %04d
+                \tEdad: %d años
+                \tSalario: %.2f €
+                """.formatted(nombre, numeroEmpleado, edad, salario);
+
+        System.out.println(mensaje);
+
+        // Formateo con text block y printf
+        System.out.printf("""
+                %nDetalle Persona:\s
+                -------------------
+                \tNombre: %s
+                \tNo. Empleado: %04d
+                \tEdad: %d años
+                \tSalario: %.2f €
+                """, nombre, numeroEmpleado, edad, salario);
     }
 }
