@@ -13,20 +13,28 @@ public class GeneradorTicketVenta {
         System.out.print("Precio plátanos: ");
         double platanos = entrada.nextDouble();
 
+        System.out.print("Aplicar algún descuento (%)?: ");
+        double descuentoProcentaje = entrada.nextInt();
+
         // Calculamos el total sin IVA
         double sumTotal = leche + pan + lechuga + platanos;
 
+        // Aplicamos el descuento
+        double descuento = sumTotal * (descuentoProcentaje / 100);
+        double totalConDescuento = sumTotal - descuento;
+
         // Calculamos con el IVA 21%
-        double impuestos = sumTotal * 0.21;
+        double impuestos = totalConDescuento * 0.21;
 
-        // Calculo total con impuestos
-        double total = sumTotal + impuestos;
-
+        // Calculo total con impuestos y descuento
+        double total = totalConDescuento + impuestos;
+        //kjhlkjhlkjlkjhlkjhlkj
         System.out.printf("""
                 \nTICKET
                 \tSuma total sin IVA: %.2f €,
+                \tDescuento aplicado (%.0f%%): %.2f €,
                 \tIVA (21%%): %.2f €,
                 \tTotal con IVA: %.2f €
-                """, sumTotal, impuestos, total);
+                """, sumTotal, descuentoProcentaje, descuento, impuestos, total);
     }
 }
