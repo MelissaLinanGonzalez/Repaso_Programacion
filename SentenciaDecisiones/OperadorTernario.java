@@ -20,5 +20,11 @@ public class OperadorTernario {
         int edad = entrada.nextInt();
         var resultado2 = (edad >= 18) ? "Mayor": "Menor";
         System.out.println(resultado2);
+
+        // Valor positivo, negativo o cero (operador ternario anidado)
+        System.out.print("Introduce un número para determinar si es mayor o menor que 0 ó es 0: ");
+        int num2 = entrada.nextInt();
+        var resultado3 = (num2 > 0) ? "Positivo": (num2 < 0) ? "Negativo": "Cero";
+        System.out.println(resultado3);
     }
 }
