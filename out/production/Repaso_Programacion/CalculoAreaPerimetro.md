@@ -12,4 +12,5 @@ base
 
 
 area = base * altura
+
 perímetro = 2 * (base + altura) 
