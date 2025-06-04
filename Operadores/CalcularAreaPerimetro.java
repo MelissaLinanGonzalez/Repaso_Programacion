@@ -12,7 +12,7 @@ public class CalcularAreaPerimetro {
 
         double area = base * altura;
         double perimetro = 2 * (base + altura);
-        
+
         System.out.printf("""
                 \nAltura: %.2f,
                 Base: %.2f,

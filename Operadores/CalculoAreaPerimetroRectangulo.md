@@ -2,13 +2,14 @@
 
 Se solicita calcular el área y perímetro de un rectángulo aplicando las siguientes fórmulas:
 
-+----------------------+
-|                      |
-|                      |    altura
-|                      |
-|                      |
-+----------------------+
-      base
+```
++--------+
+|        |  altura
+|        |
++--------+
+base
+```
+
 
 area = base * altura
 perímetro = 2 * (base + altura) 
