@@ -35,5 +35,5 @@ public class TiendaLinea {
                     Total de la compra: %.2f €
                     """, cantidad);
         }
-    } 
+    }
 }
