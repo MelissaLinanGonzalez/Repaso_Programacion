@@ -8,16 +8,23 @@ public class IdentificarEstacion {
         Scanner entrada = new Scanner(System.in);
         int mes = entrada.nextInt();
 
-        if (mes == 1 || mes == 2 || mes == 12){
-            System.out.println("El mes " + mes + " es Invierno");
-        } else if (mes >= 3 && mes <= 5) {
-            System.out.println("El mes " + mes + " es Primavera");
-        } else if (mes >= 6 && mes <= 8) {
-            System.out.println("El mes " + mes + " es Verano");
-        } else if (mes >= 9 && mes <= 11) {
-            System.out.println("El mes " + mes + " es Otoño");
-        } else {
-            System.out.println("El mes " + mes + " no pertenece a ninguna estación conocida");
+
+        switch (mes){
+            case 1,2,12:
+                System.out.println("Invierno");
+                break;
+            case 3,4,5:
+                System.out.println("Primavera");
+                break;
+            case 6,7,8:
+                System.out.println("Verano");
+                break;
+            case 9,10,11:
+                System.out.println("Otoño");
+                break;
+            default:
+                System.out.println("Mes inválido");
+                break;
         }
     }
 }
