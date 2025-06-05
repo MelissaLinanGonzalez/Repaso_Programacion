@@ -4,8 +4,9 @@ public class SumaNumerosConsecutivos {
         int contador = 0;
         int suma = 0;
         while (contador <= 5){
+            System.out.println("(Suma inicial + número a sumar) -> " + suma + " + " + contador);
             suma += contador;
-            System.out.println(suma);
+            System.out.println("Suma resultante: " + suma);
             contador++;
 
         }
