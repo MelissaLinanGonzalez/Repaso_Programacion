@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Entrada_Datos_por_Consola" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Operadores" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SentenciaDecisiones" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Ciclos" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
