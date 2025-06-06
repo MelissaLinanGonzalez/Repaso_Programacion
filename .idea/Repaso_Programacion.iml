@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/SentenciaDecisiones" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ciclos" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Arrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Matrices" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
