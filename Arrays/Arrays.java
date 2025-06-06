@@ -1,14 +1,15 @@
 public class Arrays {
     public static void main(String[] args) {
         // Arrays
-        // 1. Declaramos un array
-        int[] enteros;
+        int[] enteros = new int[5];
 
-        // 2. Inicializar el array
-        enteros = new int[3]; // Se reservan 3 espacios en la memoria para el array
+        // Modificar los elementos
+        enteros[0] = 13;
+        enteros[1] = 21;
+        enteros[4] = 62;
 
-        // 2. Declarar e inicializar un array
-        int[] numeros = new int[2];
-        
+        for (int i = 0; i < enteros.length; i++) {
+            System.out.println("Posición " + i + ": " + enteros[i]);
+        }
     }
 }
