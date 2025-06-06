@@ -11,5 +11,12 @@ public class Arrays {
         for (int i = 0; i < enteros.length; i++) {
             System.out.println("Posición " + i + ": " + enteros[i]);
         }
+
+        System.out.printf("\nOtra forma de inicializar un array");
+        // Otra manera de inicializar arrays
+        int[] numeros = {24, 50, 45, 70, 80};
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.printf("\nPosición " + i + ": " + numeros[i]);
+        }
     }
 }
