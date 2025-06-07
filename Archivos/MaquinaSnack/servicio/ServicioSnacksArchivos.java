@@ -98,6 +98,6 @@ public class ServicioSnacksArchivos implements IServioSnacks{
 
     @Override
     public List<Snack> getSnacks() {
-        return List.of();
+        return this.snacks;
     }
 }

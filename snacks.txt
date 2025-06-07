@@ -1,3 +1,4 @@
 1,Chuches,0.5
 2,Pringles,2.5
 3,Conchas,1.0
+4,Chocolate,1.2
