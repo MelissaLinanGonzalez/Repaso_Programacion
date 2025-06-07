@@ -2,6 +2,7 @@ package MaquinaSnack.presentacion;
 
 import MaquinaSnack.dominio.Snack;
 import MaquinaSnack.servicio.IServioSnacks;
+import MaquinaSnack.servicio.ServicioSnacksArchivos;
 import MaquinaSnack.servicio.ServicioSnacksLista;
 
 import java.util.ArrayList;
@@ -17,7 +18,8 @@ public class MaquinaSnacks {
         var salir = false;
         var entrada = new Scanner(System.in);
         // Creamos el objeto para obtener el servicio de snacks (lista)
-        IServioSnacks servicioSnacks = new ServicioSnacksLista();
+        //IServioSnacks servicioSnacks = new ServicioSnacksLista();
+        IServioSnacks servicioSnacks = new ServicioSnacksArchivos();
         // Creamos la lista de productos de tipo snack
         List<Snack> productos = new ArrayList<>();
         System.out.println("*** Máquina de Snacks ***");
