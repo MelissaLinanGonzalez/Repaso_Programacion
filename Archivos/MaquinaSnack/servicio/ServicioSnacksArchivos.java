@@ -87,7 +87,13 @@ public class ServicioSnacksArchivos implements IServioSnacks{
 
     @Override
     public void mostrarSnacks() {
-        
+        System.out.println("--- Snacks en el Inventario ---");
+        // Mostramos la lista de snacks en el archivo
+        var inventarioSnack = "";
+        for (Snack snack : this.snacks){
+            inventarioSnack += snack.toString() + " \n";
+        }
+        System.out.println(inventarioSnack);
     }
 
     @Override
