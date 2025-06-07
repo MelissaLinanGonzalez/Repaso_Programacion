@@ -5,6 +5,8 @@ import MaquinaSnack.dominio.Snack;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class ServicioSnacksArchivos implements IServioSnacks{
         try {
             existe = archivo.exists();
             if (existe){
-                //this.snacks = obtenerSnacks();
+                this.snacks = obtenerSnacks();
             }else {
                 PrintWriter salida = new PrintWriter(new FileWriter(archivo));
                 salida.close(); // Para guardar el archivo en disco
@@ -40,6 +42,25 @@ public class ServicioSnacksArchivos implements IServioSnacks{
         this.agregarSnack(new Snack("Chuches", 0.50));
         this.agregarSnack(new Snack("Pringles", 2.50));
         this.agregarSnack(new Snack("Conchas", 1));
+    }
+
+    private List<Snack> obtenerSnacks(){
+        ArrayList<Snack> snacks = new ArrayList<>();
+        try {
+            List<String> lineas = Files.readAllLines(Paths.get(NOMBRE_ARCHIVO));
+            for (String linea : lineas){
+                String[] lineaSnack = linea.split(",");
+                var idSnack = lineaSnack[0];
+                String nombre = lineaSnack[1];
+                var precio = Double.parseDouble(lineaSnack[2]);
+                var snack = new Snack(nombre, precio);
+                snacks.add(snack); // Agregamos el snack leido a la lista
+            }
+        } catch (Exception e) {
+            System.out.println("Error al leer archivo de snacks: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return snacks;
     }
 
     @Override
@@ -66,7 +87,7 @@ public class ServicioSnacksArchivos implements IServioSnacks{
 
     @Override
     public void mostrarSnacks() {
-
+        
     }
 
     @Override
