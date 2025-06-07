@@ -57,7 +57,7 @@ public class ServicioSnacksArchivos implements IServioSnacks{
         try {
             agregar = archivo.exists();
             PrintWriter salida = new PrintWriter(new FileWriter(archivo, agregar));
-            salida.println(snack);
+            salida.println(snack.escribirSnack());
             salida.close(); //Se escribe la información en el archivo
         } catch (Exception e) {
             System.out.println("Error al agregar snack: " + e.getMessage());
