@@ -102,6 +102,28 @@ public class ClienteDAO implements IClienteDAO{
 
     @Override
     public boolean modificarCliente(Cliente cliente) {
+        PreparedStatement ps;
+        Connection con = Conexion.getConexion();
+        String sql = "UPDATE cliente SET nombre = ?, apellido = ?, membresia = ? WHERE id = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getNombre());
+            ps.setString(2, cliente.getApellido());
+            ps.setInt(3, cliente.getMembresia());
+            ps.setInt(4, cliente.getId());
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error al modificar el cliente: " + e.getMessage());
+        }
+
+        finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.out.println("Error al cerrar la conexion: " + e.getMessage());
+            }
+        }
         return false;
     }
 
@@ -111,7 +133,6 @@ public class ClienteDAO implements IClienteDAO{
     }
 
     public static void main(String[] args) {
-        // Listar clientes
 //        System.out.println("*** Listar clientes ***");
         IClienteDAO clienteDAO = new ClienteDAO();
 //
@@ -127,15 +148,28 @@ public class ClienteDAO implements IClienteDAO{
 //        }
 
         // Añadir cliente
-        var nuevoCLiente = new Cliente("Paco", "Pena", 300);
-        boolean agregado = clienteDAO.agregarCliente(nuevoCLiente);
-        if (agregado){
-            System.out.println("Cliente añadido correctamente: " + nuevoCLiente);
+//        var nuevoCLiente = new Cliente("Paco", "Pena", 300);
+//        boolean agregado = clienteDAO.agregarCliente(nuevoCLiente);
+//        if (agregado){
+//            System.out.println("Cliente añadido correctamente: " + nuevoCLiente);
+//        } else {
+//            System.out.println("No se ha podido añadir el cliente: " + nuevoCLiente);
+//        }
+//
+//
+
+        // Modificar cliente
+        Cliente modificarCliente = new Cliente(3, "Amapolita", "Duque", 1321);
+        boolean modificado = clienteDAO.modificarCliente(modificarCliente);
+        if (modificado){
+            System.out.println("Cliente modificado: " + modificarCliente);
         } else {
-            System.out.println("No se ha podido añadir el cliente: " + nuevoCLiente);
+            System.out.println("Error al modificar cliente: " + modificarCliente);
         }
 
+        // Listar clientes
         var clientes = clienteDAO.listarClientes();
         clientes.forEach(System.out::println);
+
     }
 }
