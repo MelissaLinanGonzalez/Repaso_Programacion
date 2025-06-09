@@ -44,6 +44,32 @@ public class ClienteDAO implements IClienteDAO{
 
     @Override
     public boolean buscarClientePorId(Cliente cliente) {
+        PreparedStatement ps;
+        ResultSet rs;
+        Connection con = Conexion.getConexion();
+        String sql = "SELECT * FROM cliente WHERE id = ?";
+        try {
+            ps = con.prepareStatement(sql); //Se prepara la consulta sql
+            ps.setInt(1, cliente.getId()); // Se introduce el parámetro que falta en la consulta = ?
+            rs = ps.executeQuery();
+            if (rs.next()){
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido(rs.getString("apellido"));
+                cliente.setMembresia(rs.getInt("membresia"));
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error al buscar el cliente por el id: " + e.getMessage());
+        }
+
+        finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.out.println("Error al cerrar la conexión: " + e.getMessage());
+            }
+        }
+
         return false;
     }
 
@@ -64,9 +90,19 @@ public class ClienteDAO implements IClienteDAO{
 
     public static void main(String[] args) {
         // Listar clientes
-        System.out.println("*** Listar clientes ***");
+//        System.out.println("*** Listar clientes ***");
         IClienteDAO clienteDAO = new ClienteDAO();
-        var clientes = clienteDAO.listarClientes();
-        clientes.forEach(System.out::println);
+//        var clientes = clienteDAO.listarClientes();
+//        clientes.forEach(System.out::println);
+
+        // Buscar por id
+        Cliente cliente1 = new Cliente(2);
+        System.out.println("Cliente antes de la búsqueda: " + cliente1);
+        var encontrado = clienteDAO.buscarClientePorId(cliente1);
+        if (encontrado){
+            System.out.println("Cliente encontrado: " + cliente1);
+        } else {
+            System.out.println("No se encontró cliente: " + cliente1.getId());
+        }
     }
 }
