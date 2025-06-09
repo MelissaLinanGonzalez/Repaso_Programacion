@@ -1,6 +1,4 @@
-package zona_fit.conexion;
-
-import com.mysql.cj.jdbc.Driver;
+package zona_fit.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package zona_fit.dominio;
+package zona_fit.domain;
 
 import java.util.Objects;
 
