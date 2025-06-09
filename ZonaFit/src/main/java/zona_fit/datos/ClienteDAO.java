@@ -153,7 +153,7 @@ public class ClienteDAO implements IClienteDAO{
 
     public static void main(String[] args) {
 //        System.out.println("*** Listar clientes ***");
-        IClienteDAO clienteDAO = new ClienteDAO();
+//        IClienteDAO clienteDAO = new ClienteDAO();
 //
 
         // Buscar por id
@@ -187,16 +187,16 @@ public class ClienteDAO implements IClienteDAO{
 //        }
 
         // Eliminar cliente
-        Cliente eliminandoCliente = new Cliente(1);
-        boolean eliminado = clienteDAO.eliminarCliente(eliminandoCliente);
-        if (eliminado){
-            System.out.println("Cliente con id: " + eliminandoCliente + " eliminado correctamente");
-        } else {
-            System.out.println("Error al eliminar cliente");
-        }
-        // Listar clientes
-        var clientes = clienteDAO.listarClientes();
-        clientes.forEach(System.out::println);
+//        Cliente eliminandoCliente = new Cliente(1);
+//        boolean eliminado = clienteDAO.eliminarCliente(eliminandoCliente);
+//        if (eliminado){
+//            System.out.println("Cliente con id: " + eliminandoCliente + " eliminado correctamente");
+//        } else {
+//            System.out.println("Error al eliminar cliente");
+//        }
+//        // Listar clientes
+//        var clientes = clienteDAO.listarClientes();
+//        clientes.forEach(System.out::println);
 
     }
 }
