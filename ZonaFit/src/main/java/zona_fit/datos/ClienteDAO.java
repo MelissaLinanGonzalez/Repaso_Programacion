@@ -61,4 +61,12 @@ public class ClienteDAO implements IClienteDAO{
     public boolean eliminarCliente(Cliente cliente) {
         return false;
     }
+
+    public static void main(String[] args) {
+        // Listar clientes
+        System.out.println("*** Listar clientes ***");
+        IClienteDAO clienteDAO = new ClienteDAO();
+        var clientes = clienteDAO.listarClientes();
+        clientes.forEach(System.out::println);
+    }
 }
