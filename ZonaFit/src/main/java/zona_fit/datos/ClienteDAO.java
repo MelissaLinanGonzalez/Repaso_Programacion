@@ -114,17 +114,28 @@ public class ClienteDAO implements IClienteDAO{
         // Listar clientes
 //        System.out.println("*** Listar clientes ***");
         IClienteDAO clienteDAO = new ClienteDAO();
-//        var clientes = clienteDAO.listarClientes();
-//        clientes.forEach(System.out::println);
+//
 
         // Buscar por id
-        Cliente cliente1 = new Cliente(2);
-        System.out.println("Cliente antes de la búsqueda: " + cliente1);
-        var encontrado = clienteDAO.buscarClientePorId(cliente1);
-        if (encontrado){
-            System.out.println("Cliente encontrado: " + cliente1);
+//        Cliente cliente1 = new Cliente(2);
+//        System.out.println("Cliente antes de la búsqueda: " + cliente1);
+//        var encontrado = clienteDAO.buscarClientePorId(cliente1);
+//        if (encontrado){
+//            System.out.println("Cliente encontrado: " + cliente1);
+//        } else {
+//            System.out.println("No se encontró cliente: " + cliente1.getId());
+//        }
+
+        // Añadir cliente
+        var nuevoCLiente = new Cliente("Paco", "Pena", 300);
+        boolean agregado = clienteDAO.agregarCliente(nuevoCLiente);
+        if (agregado){
+            System.out.println("Cliente añadido correctamente: " + nuevoCLiente);
         } else {
-            System.out.println("No se encontró cliente: " + cliente1.getId());
+            System.out.println("No se ha podido añadir el cliente: " + nuevoCLiente);
         }
+
+        var clientes = clienteDAO.listarClientes();
+        clientes.forEach(System.out::println);
     }
 }
