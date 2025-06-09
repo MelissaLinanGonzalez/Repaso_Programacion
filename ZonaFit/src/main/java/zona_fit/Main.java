@@ -17,9 +17,10 @@ public class Main {
                     \n--- Menú ---
                     \t1. Listar los clientes
                     \t2. Añadir nuevo cliente
-                    \t3. Modificar cliente existente
-                    \t4. Eliminar cliente
-                    \t5. Salir.
+                    \t3. Buscar cliente
+                    \t4. Modificar cliente existente
+                    \t5. Eliminar cliente
+                    \t6. Salir.
                     """);
             System.out.print("Seleccione una opción: ");
             opcion = entrada.nextInt();
@@ -50,6 +51,18 @@ public class Main {
                     break;
                 case 3:
                     System.out.println(" ");
+                    System.out.print("Introduce el id del cliente que deseas buscar: ");
+                    int idBuscado = entrada.nextInt();
+                    Cliente clienteBuscado = new Cliente(idBuscado);
+                    boolean encontrado = clienteDAO.buscarClientePorId(clienteBuscado);
+                    if (encontrado){
+                        System.out.println("Cliente encontrado: " + clienteBuscado);
+                    } else {
+                        System.out.println("Error al buscar el cliente: " + clienteBuscado);
+                    }
+                    break;
+                case 4:
+                    System.out.println(" ");
                     System.out.print("Introduce el id del cliente que deseas modificar: ");
                     int id = entrada.nextInt();
                     entrada.nextLine();
@@ -68,7 +81,7 @@ public class Main {
                         System.out.println("Error al modificar cliente");
                     }
                     break;
-                case 4:
+                case 5:
                     System.out.println(" ");
                     System.out.println("*** Clientes ***");
                     var listaClientes = clienteDAO.listarClientes();
@@ -83,7 +96,7 @@ public class Main {
                         System.out.println("Error al eliminar el cliente");
                     }
                     break;
-                case 5:
+                case 6:
                     System.out.println(" ");
                     System.out.println("Saliendo del programa. Hasta pronto ...");
                     seguir = true;
