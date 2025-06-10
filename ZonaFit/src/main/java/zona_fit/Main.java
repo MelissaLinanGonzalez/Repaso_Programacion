@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // Se inicializa el clienteDAO para poder acceder a los métodos 
         ClienteDAO clienteDAO = new ClienteDAO();
         System.out.println("*** Sistema de Zona Fit ***");
         Scanner entrada = new Scanner(System.in);

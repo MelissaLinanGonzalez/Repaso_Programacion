@@ -1,10 +1,5 @@
-### Maven ###
+HELP.md
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -19,12 +14,10 @@ release.properties
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea/
+.idea
 *.iws
 *.iml
 *.ipr
-*.swp
-*.swo
 
 ### NetBeans ###
 /nbproject/private/
@@ -38,33 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Logs ###
-*.log
-logs/
-
-### Others ###
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-*.tmp
-*.bak
-*.orig
-*.rej
-*.sublime-workspace
-.DS_Store
-*.cache
-*.diff
-*.patch
-*.bin
-*.db
-*.lock
-*.out
-*.pid
-*.seed
-*.pid.lock
-*.settings
-*.springBeans
-*.flattened-pom.xml
