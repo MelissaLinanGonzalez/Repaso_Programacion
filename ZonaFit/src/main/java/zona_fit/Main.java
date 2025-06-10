@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Se inicializa el clienteDAO para poder acceder a los métodos 
+        // Se inicializa el clienteDAO para poder acceder a los métodos
         ClienteDAO clienteDAO = new ClienteDAO();
         System.out.println("*** Sistema de Zona Fit ***");
         Scanner entrada = new Scanner(System.in);
         int opcion ;
-        boolean seguir = false;
-        while (!seguir){
+        boolean salir = false;
+        while (!salir){
             System.out.print("""
                     \n--- Menú ---
                     \t1. Listar los clientes
@@ -100,7 +100,7 @@ public class Main {
                 case 6:
                     System.out.println(" ");
                     System.out.println("Saliendo del programa. Hasta pronto ...");
-                    seguir = true;
+                    salir = true;
                     break;
                 default:
                     System.out.println("Valor introduci NO válido");
