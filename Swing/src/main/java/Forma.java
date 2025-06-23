@@ -1,3 +1,5 @@
+import com.formdev.flatlaf.FlatDarculaLaf;
+
 import javax.swing.*;
 
 public class Forma extends JFrame{ // Se extiende para poder trabajar con Swing y usar los métodos sin problemas
@@ -15,6 +17,7 @@ public class Forma extends JFrame{ // Se extiende para poder trabajar con Swing 
     }
 
     public static void main(String[] args) {
+        FlatDarculaLaf.setup(); // Se cambia el look and feel a modo oscuro
         Forma forma = new Forma();
         forma.setVisible(true);
     }
