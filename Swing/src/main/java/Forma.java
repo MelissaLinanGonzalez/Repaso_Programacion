@@ -1,0 +1,21 @@
+import javax.swing.*;
+
+public class Forma extends JFrame{ // Se extiende para poder trabajar con Swing y usar los métodos sin problemas
+    private JPanel panel1;
+
+    public Forma(){
+        inicializarForma();
+    }
+
+    private void inicializarForma(){
+        setContentPane(panel1);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cuando se cierre la ventana tambien finaliza la aplicacion
+        setSize(600, 400);
+        setLocationRelativeTo(null); // Se centra la venta
+    }
+
+    public static void main(String[] args) {
+        Forma forma = new Forma();
+        forma.setVisible(true);
+    }
+}
