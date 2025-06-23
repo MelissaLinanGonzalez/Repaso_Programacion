@@ -3,14 +3,15 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import javax.swing.*;
 
 public class Forma extends JFrame{ // Se extiende para poder trabajar con Swing y usar los métodos sin problemas
-    private JPanel panel1;
+    private JPanel panelPrincipal;
+    private JTextField campoTexto;
 
     public Forma(){
         inicializarForma();
     }
 
     private void inicializarForma(){
-        setContentPane(panel1);
+        setContentPane(panelPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cuando se cierre la ventana tambien finaliza la aplicacion
         setSize(600, 400);
         setLocationRelativeTo(null); // Se centra la venta
