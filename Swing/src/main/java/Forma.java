@@ -1,13 +1,19 @@
 import com.formdev.flatlaf.FlatDarculaLaf;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Forma extends JFrame{ // Se extiende para poder trabajar con Swing y usar los métodos sin problemas
     private JPanel panelPrincipal;
     private JTextField campoTexto;
+    private JLabel replicadorLabel;
 
     public Forma(){
         inicializarForma();
+        campoTexto.addActionListener(e -> {
+            System.out.println("Se ejecutó el action listener");
+        });
     }
 
     private void inicializarForma(){
